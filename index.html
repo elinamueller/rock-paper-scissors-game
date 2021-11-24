@@ -20,9 +20,14 @@
            //let resultWin = alert("You win! " + playerSelection + " beats " + computerSelection + "!");
 
            function playRound(playerSelection, computerSelection) {
-               if (playerSelection == /Rock/ && computerSelection == "Paper") {
+               if (playerSelection == /Rock/ && computerSelection == "Paper" || 
+                    playerSelection == /Paper/ && computerSelection == "Scissors" ||
+                    playerSelection == /Scissors/ && computerSelection == "Rock") {
                     return alert("You lose! " + computerSelection + " beats " +  playerSelection + "!");
-               } else if (playerSelection == /Rock/ && computerSelection == "Scissors") {
+               } else if (playerSelection == /Rock/ && computerSelection == "Scissors" ||
+                    playerSelection == /Paper/ && computerSelection == "Rock" ||
+                    playerSelection == /Rock/ && computerSelection == "Scissors" ||
+                    playerSelection == /Scissors/ && computerSelection == "Paper") {
                     return alert("You win! " + playerSelection + " beats " + computerSelection + "!");
                }    else {
                        return "That's even.";
