@@ -7,34 +7,29 @@
     <script>
             //randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
            function computerPlay() {
-                const aSelection = ["Rock", "Paper", "Scissors"];
+                const aSelection = ["rock", "paper", "scissors"];
                 let randSelection = aSelection[Math.floor(Math.random() * aSelection.length)];
                 return randSelection;
            }
            computerPlay();
 
            //play a round and return a string of text declaring a result
-           const playerSelection = prompt("Choose your weapon.");
+           const playerSelection = window.prompt("Choose your weapon").toLowerCase();
            const computerSelection = computerPlay();
-           //let resultLose = alert("You lose! " + computerSelection + " beats " +  playerSelection + "!");
-           //let resultWin = alert("You win! " + playerSelection + " beats " + computerSelection + "!");
-
            function playRound(playerSelection, computerSelection) {
-               if (playerSelection == /Rock/ && computerSelection == "Paper" || 
-                    playerSelection == /Paper/ && computerSelection == "Scissors" ||
-                    playerSelection == /Scissors/ && computerSelection == "Rock") {
+               if ((playerSelection === "rock" && computerSelection === "paper") || 
+                    (playerSelection === "paper" && computerSelection === "scissors") ||
+                    (playerSelection === "scissors" && computerSelection === "rock")) {
                     return alert("You lose! " + computerSelection + " beats " +  playerSelection + "!");
-               } else if (playerSelection == /Rock/ && computerSelection == "Scissors" ||
-                    playerSelection == /Paper/ && computerSelection == "Rock" ||
-                    playerSelection == /Rock/ && computerSelection == "Scissors" ||
-                    playerSelection == /Scissors/ && computerSelection == "Paper") {
+               } else if ((playerSelection === "rock" && computerSelection === "scissors") ||
+                    (playerSelection === "paper" && computerSelection === "rock") ||
+                    (playerSelection === "scissors" && computerSelection === "paper")) {
                     return alert("You win! " + playerSelection + " beats " + computerSelection + "!");
                }    else {
-                       return "That's even.";
+                       return alert("That's even. " + playerSelection + " is the same as " + computerSelection);
                }
            }
-           
-           //console.log(playRound(playerSelection, computerSelection));
+           console.log(playRound(playerSelection, computerSelection));
 
     </script>
 </body>
