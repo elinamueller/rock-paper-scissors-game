@@ -35,6 +35,8 @@
                         return;
                     } else {
                         console.log("That\'s a tie. " + playerSelection + " is " + computerSelection + "!");
+                        ++playerScore;
+                        ++computerScore;
                         return;
                     }
                 } 
@@ -46,7 +48,12 @@
                 }    
             }
             game();
-
+            
+            function tieGame() {
+                if (playerScore === computerScore) {
+                    return game();
+                }
+            }
     </script>
 </body>
 </head>
