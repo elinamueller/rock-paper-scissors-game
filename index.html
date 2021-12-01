@@ -14,43 +14,38 @@
 
            //play a 5 round game that keeps score and reports a winner or loser at the end
             const playerSelection = window.prompt("Choose your weapon").toLowerCase();
-            const computerSelection = computerPlay(); 
-            const computerWin = alert("You lose! " + computerSelection + " beats " +  playerSelection + "! " + playerScore + " : " + computerScore);
+            const computerSelection = computerPlay();
+            let computerScore = 0;
+            let playerScore = 0;
 
-           function game() {
-               for (let i = 0; i <= 5; i++) {
-                function playRound(playerSelection, computerSelection) {
+            function playRound(playerSelection, computerSelection) {
+                playerSelection = window.prompt("Choose your weapon").toLowerCase();
+                computerSelection = computerPlay();
                     if ((playerSelection === "rock" && computerSelection === "paper") || 
                             (playerSelection === "paper" && computerSelection === "scissors") ||
                             (playerSelection === "scissors" && computerSelection === "rock")) {
-                        return computerWin = alert("You lose! " + computerSelection + " beats " +  playerSelection + "! " + playerScore + " : " + computerScore);
+                        console.log("You lose! " + computerSelection + " beats " +  playerSelection + "!");
+                        ++computerScore;
+                        return;
                      } else if ((playerSelection === "rock" && computerSelection === "scissors") ||
                             (playerSelection === "paper" && computerSelection === "rock") ||
                             (playerSelection === "scissors" && computerSelection === "paper")) {
-                        return playerWin = alert("You win! " + playerSelection + " beats " + computerSelection + "! " + playerScore + " : " + computerScore);
+                        console.log("You win! " + playerSelection + " beats " + computerSelection + "!");
+                        ++playerScore;
+                        return;
                     } else {
-                        return evenGame = alert("That\'s tie. " + playerSelection + " is " + computerSelection + "! " + playerScore + " : " + computerScore);
+                        console.log("That\'s a tie. " + playerSelection + " is " + computerSelection + "!");
+                        return;
                     }
-                }
+                } 
+
+           function game() {
+               for (let i = 0; i < 5; i++) {
+                    const roundOne = playRound(playerSelection, computerSelection);
+                    console.log("The score is " + playerScore + " : " + computerScore);
                 }    
-            }    
-
-            console.log("You chose " + playerSelection);
-            console.log("Computer chose " + computerSelection);
-            console.log(playerScore + " : " + computerScore);
-
-            //determine the winner
-            let playerScore = 0;
-            let computerScore = 0;
-
-            function countScrore() {
-                for (i = 0; i <= 5; i++) {
-                    if (computerWin = true) {
-                        
-                    }
-                }
             }
-
+            game();
 
     </script>
 </body>
