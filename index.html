@@ -44,16 +44,13 @@
             //playes game 5 times in a row and shows the final score in the end
            function playGame() {
                for (let i = 0; i < 5; i++) {
-                   if (i < 4) {
                         const roundOne = playRound(playerSelection, computerSelection);
                         console.log("The score is " + playerScore + " : " + computerScore);
-                   } else if (i = 4) {
-                       return tieGame(); 
-                   }
-                }    
+                   }   
             }
 
             playGame();
+            tieGame();
             
             //if the game ends in "tie", the game is repeated for one more round
             function tieGame() {
@@ -61,9 +58,9 @@
                     console.log("The game is tie, so we'll play another round to determine the winner.");
                     playGame();
                 } else if (playerScore > computerScore) {
-                    console.log("You won the game! Congrats!");
+                    return console.log("You won the game! Congrats!");
                 } else {
-                    console.log("You lost the game. Better luck next time!");
+                    return console.log("You lost the game. Better luck next time!");
                 }
             }
 
