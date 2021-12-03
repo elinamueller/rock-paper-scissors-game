@@ -12,7 +12,7 @@
                 return randSelection;
            }
 
-           //play a 5 round game that keeps score and reports a winner or loser at the end
+           //plays one round of the game and counts the score
             const playerSelection = window.prompt("Choose your weapon").toLowerCase();
             const computerSelection = computerPlay();
             let computerScore = 0;
@@ -41,19 +41,32 @@
                     }
                 } 
 
-           function game() {
+            //playes game 5 times in a row and shows the final score in the end
+           function playGame() {
                for (let i = 0; i < 5; i++) {
-                    const roundOne = playRound(playerSelection, computerSelection);
-                    console.log("The score is " + playerScore + " : " + computerScore);
+                   if (i < 4) {
+                        const roundOne = playRound(playerSelection, computerSelection);
+                        console.log("The score is " + playerScore + " : " + computerScore);
+                   } else if (i = 4) {
+                       return tieGame(); 
+                   }
                 }    
             }
-            game();
+
+            playGame();
             
+            //if the game ends in "tie", the game is repeated for one more round
             function tieGame() {
                 if (playerScore === computerScore) {
-                    return game();
+                    console.log("The game is tie, so we'll play another round to determine the winner.");
+                    playGame();
+                } else if (playerScore > computerScore) {
+                    console.log("You won the game! Congrats!");
+                } else {
+                    console.log("You lost the game. Better luck next time!");
                 }
             }
+
     </script>
 </body>
 </head>
