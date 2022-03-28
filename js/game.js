@@ -1,0 +1,58 @@
+//randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
+function computerPlay() {
+    const aSelection = ["rock", "paper", "scissors"];
+    let randSelection = aSelection[Math.floor(Math.random() * aSelection.length)];
+    return randSelection;
+}
+
+//plays one round of the game and counts the score
+const playerSelection = window.prompt("Choose your weapon").toLowerCase();
+const computerSelection = computerPlay();
+let computerScore = 0;
+let playerScore = 0;
+
+function playRound(playerSelection, computerSelection) {
+    playerSelection = window.prompt("Choose your weapon").toLowerCase();
+    computerSelection = computerPlay();
+        if ((playerSelection === "rock" && computerSelection === "paper") || 
+                (playerSelection === "paper" && computerSelection === "scissors") ||
+                (playerSelection === "scissors" && computerSelection === "rock")) {
+            console.log("You lose! " + computerSelection + " beats " +  playerSelection + "!");
+            ++computerScore;
+            return;
+         } else if ((playerSelection === "rock" && computerSelection === "scissors") ||
+                (playerSelection === "paper" && computerSelection === "rock") ||
+                (playerSelection === "scissors" && computerSelection === "paper")) {
+            console.log("You win! " + playerSelection + " beats " + computerSelection + "!");
+            ++playerScore;
+            return;
+        } else {
+            console.log("That\'s a tie. " + playerSelection + " is " + computerSelection + "!");
+            ++playerScore;
+            ++computerScore;
+            return;
+        }
+    } 
+
+//playes game 5 times in a row and shows the final score in the end
+function playGame() {
+   for (let i = 0; i < 5; i++) {
+            const roundOne = playRound(playerSelection, computerSelection);
+            console.log("The score is " + playerScore + " : " + computerScore);
+       }   
+}
+
+playGame();
+tieGame();
+
+//if the game ends in "tie", the game is repeated for one more round
+function tieGame() {
+    if (playerScore === computerScore) {
+        console.log("The game is tie, so we'll play another round to determine the winner.");
+        playGame();
+    } else if (playerScore > computerScore) {
+        return console.log("You won the game! Congrats!");
+    } else {
+        return console.log("You lost the game. Better luck next time!");
+    }
+}
