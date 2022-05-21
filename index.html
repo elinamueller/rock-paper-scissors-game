@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3b14ec5cd6.js" crossorigin="anonymous"></script>
     <meta name="author" content="Elina M.">
+    <link rel="stylesheet" href="css/game.css">
     <title>Rock Paper Scissors Game</title>
-    <link rel="stylesheet" href="game.css">
 </head>
 
 <body>
     <script src="game.js" defer></script>
 
-    <header>
+    <header class="header">
         <h1>rock paper scissors game</h1>
-        <p>sometimes you win, sometimes you lose</p>
+        <blockquote>
+            sometimes you win, sometimes you lose.
+        </blockquote>
     </header>
 
-    <main>
-        <section>
+    <main class="main">
+        <section class="game-choices">
             <h2>choose your weapon wisely</h2>
-            <img src="" alt="rock" width="" height="">
-            <img src="" alt="scissors" width="" height="">
-            <img src="" alt="paper" width="" height="">
+            <div class="rps-buttons">
+                <button id="rock">rock</button>
+                <button id="paper">paper</button>
+                <button id="scissors">scissors</button>
+            </div>
         </section>
 
-        <section>
-            <p>the result of this game</p>
-            <img src="" alt="result" width="" height="">
+        <section class="results">
+            <p class="results-scores">the result of this game</p>
         </section>
     </main>
 
-    <footer>&copy; Elina M. 2022</footer>
+    <footer class="footer">&copy; Elina M. 2022</footer>
 
 </body>
 </html>
