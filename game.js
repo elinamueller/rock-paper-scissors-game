@@ -39,7 +39,7 @@ reset.addEventListener('click', resetGame);
 function resetGame() {
     let computerScore = 0;
     let playerScore = 0;
-    results.textContent = "let's play!";
+    results.textContent = "refresh your page and let's play!! ";
     score.textContent = "0" + " : " + "0";
 }
 
