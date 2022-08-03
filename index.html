@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3b14ec5cd6.js" crossorigin="anonymous"></script>
+    <meta name="author" content="Elina M.">
+    <link rel="stylesheet" href="css/game.css">
+    <title>Rock Paper Scissors Game</title>
+</head>
+
+<body>
+    <script src="js/game.js" defer></script>
+
+    <header class="header">
+        <h1>rock paper scissors game</h1>
+        <blockquote>
+            sometimes you win, sometimes you lose.
+        </blockquote>
+    </header>
+
+    <main class="main">
+        <section class="game-choices">
+            <h2>choose your weapon wisely</h2>
+            <div id="buttons" class="rps-buttons">
+                <button id="rock" value="rock">rock</button>
+                <button id="paper" value="paper">paper</button>
+                <button id="scissors" value="scissors">scissors</button>
+            </div>
+        </section>
+
+        <section id="score" class="score">0 : 0</section>
+
+        <section class="results">
+            <p id="results" class="results"></p>
+            <button id="reset" class="reset">reset game</button>
+        </section>
+    </main>
+
+    <footer class="footer">&copy; Elina M. 2022</footer>
+
+</body>
+</html>
