@@ -1,0 +1,89 @@
+@import url('http://fonts.cdnfonts.com/css/pt-mono');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 3px;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    min-height: 100vh;
+    font-family: 'PT Mono', sans-serif;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    background-color: #e8eef3;
+    color: #193f63;
+}
+
+header, main, footer, section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+blockquote {
+    margin: autoe3r6    3;
+    font-size: 1.0rem;
+    font-style: oblique;
+    color: #6183f3;;
+    display: block;
+}
+
+blockquote:before, blockquote:after {
+    content: '"';
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+#rock, #paper, #scissors {
+    padding: 20px 15px;
+    border-radius: 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #000;
+    background: rgb(0, 0, 0, 0.1);
+    font-family: 'PT Mono', sans-serif;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+#rock:hover, 
+#paper:hover, 
+#scissors:hover {
+    transition: 0.3 ease;
+    color: #6183f3;
+}
+
+#reset {
+    padding: 10px 10px;
+    border-radius: 5px;
+    border-color: #28639b;
+    font-family: 'PT Mono', sans-serif;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.footer {
+    font-size: 1.0rem;
+    position: relative;
+}
